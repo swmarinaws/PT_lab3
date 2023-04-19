@@ -170,9 +170,9 @@ class Teacher:
         return self.rank <= other.rank
 
 """Запись сгенерированных данных в файл MS Excel"""
-# with pd.ExcelWriter("./sets.xlsx") as writer:
-#     for i in sizes:
-#         pd.DataFrame(generate(i)).to_excel(writer, sheet_name=f"{i}", index=False)
+with pd.ExcelWriter("./sets.xlsx") as writer:
+    for i in sizes:
+        pd.DataFrame(generate(i)).to_excel(writer, sheet_name=f"{i}", index=False)
 
 """Считывание входных данных из файла MS Excel и запись в словарь"""
 teachers = {}
