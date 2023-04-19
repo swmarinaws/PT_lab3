@@ -169,26 +169,6 @@ class Teacher:
             return self.degree <= other.degree
         return self.rank <= other.rank
 
-class HashTable:
-    def __init__(self):
-        self.table = {}
-
-    def add_item(self, obj):
-        hash_value = obj.hash
-        if hash_value not in self.table:
-            self.table[hash_value] = [obj]
-        else:
-            self.table[hash_value].append(obj)
-
-    def find_item(self, key):
-        hash_value = calculate_hash(key)  # Вычисляем хэш ключа для поиска
-        if hash_value in self.table:
-            items = self.table[hash_value]
-            for item in items:
-                if item.key == key:
-                    return item.value
-        return None
-
 """Запись сгенерированных данных в файл MS Excel"""
 # with pd.ExcelWriter("./sets.xlsx") as writer:
 #     for i in sizes:
